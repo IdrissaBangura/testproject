@@ -1,5 +1,5 @@
 
-#import pandas
+#import modules/ libraries
 
 import pandas as pd
 
@@ -22,16 +22,17 @@ if __name__ == '__main__':
     df = topinsights.brand_null(df)
 
     topbrands = topinsights.get_top_brands(df)
-    print(topbrands.head())
+    #print(topbrands.head())
 
     topcat=topinsights.get_top_categories(df)
-    print(topcat.head())
+    #print(topcat.head())
 
 
     # 3. plot and save graphs
 
     plot = plt.Plot()
-    plot.plot_pie_chart(topbrands.head(10))
+    plot.plot_pie_chart(topbrands, "brand")
+    plot.plot_pie_chart(topcat, "cat")
 
 
 
